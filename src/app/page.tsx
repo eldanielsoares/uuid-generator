@@ -89,7 +89,7 @@ export default function Home() {
   
 
   return (
-    <>
+    <Suspense>
       <Head>
         <title>UUID Generator | Generate Unique UUIDs Online</title>
         <meta name="description" content="Quickly generate secure UUIDs online, including versions v1, v4, v6, and v7. Perfect for developers and system integrators." />
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
       </header>
       
-      {/* <div className="flex flex-col items-center pb-24">
+      <div className="flex flex-col items-center pb-24">
         <h3 className="text-center">Bulk Version {version?.toUpperCase() ?? 'V4'} UUID Generation</h3>
         
         <span className="inline-flex justify-center items-center gap-2">
@@ -143,10 +143,10 @@ export default function Home() {
         ): null}
         <h4>What is {version?.toUpperCase() ?? 'V4'} UUID</h4>
         <span className="px-6">{uuidDescriptions[version ?? 'v4']}</span>
-      </div> */}
+      </div>
     </main>
     <Toaster/>
     <Footer/>
-    </>
+    </Suspense>
   );
 }
