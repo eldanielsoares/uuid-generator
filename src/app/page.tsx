@@ -103,7 +103,7 @@ export default function Home() {
       
         
     <main className="w-full flex flex-col min-h-screen">
-      {/* <header className="bg-slate-900 p-4 flex flex-col items-center">
+      <header className="bg-slate-900 p-4 flex flex-col items-center">
         <h1 className="text-white text-center">UUID GENERATOR</h1>
         <div className="flex flex-col justify-center">
         <h4 className="text-white text-center inline-flex justify-center items-center">Your <SelectVersionComponent/> UUID:</h4>
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
       </header>
       
-      <div className="flex flex-col items-center pb-24">
+      {/* <div className="flex flex-col items-center pb-24">
         <h3 className="text-center">Bulk Version {version?.toUpperCase() ?? 'V4'} UUID Generation</h3>
         
         <span className="inline-flex justify-center items-center gap-2">
