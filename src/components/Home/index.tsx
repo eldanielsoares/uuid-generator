@@ -98,6 +98,7 @@ export function HomePage() {
         <meta property="og:description" content="Generate UUIDs for free using our online UUID Generator. Choose from various versions tailored for your needs." />
         <meta property="og:url" content="https://uuidgenerator.tech" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="google-adsense-account" content="ca-pub-8663662446032541"></meta>
       </Head>
       
         
