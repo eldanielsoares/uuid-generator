@@ -4,6 +4,7 @@ import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import './globals.css';
 import Footer from '@/components/Footer';
 import { Suspense } from 'react';
+import Script from 'next/script';
 
 
 const geistSans = localFont({
@@ -31,6 +32,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+        async
+        src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8663662446032541'
+        crossOrigin="anonymous"
+        />
         <NuqsAdapter>
         {children}
         </NuqsAdapter>
