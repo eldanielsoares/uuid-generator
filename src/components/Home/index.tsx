@@ -121,7 +121,7 @@ export function HomePage() {
         
         <span className="inline-flex justify-center items-center gap-2">
           how many?
-          <Input className="w-[10rem] h-8" type="number" placeholder="max 600" value={lenght} onChange={(v) => setLenght(v.target.value)}/>
+          <Input className="w-16 md:w-[10rem] h-8" type="number" placeholder="max 600" value={lenght} onChange={(v) => setLenght(v.target.value)}/>
           <button disabled={Number(lenght) > 600} className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0" onClick={handleBulkUUID}>Generate UUIDs</button>
         </span>
         
