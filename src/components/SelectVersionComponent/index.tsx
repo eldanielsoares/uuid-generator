@@ -7,6 +7,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { useQueryState } from "nuqs";
+import { Suspense } from "react";
 
 const uuidVersions = ['v1', 'v4', 'v6', 'v7', 'NIL'];
 
@@ -17,6 +18,7 @@ export const SelectVersionComponent = ()=> {
   const [version, setVersion] = useQueryState("version")
   
   return (
+    <Suspense>
     <Select value={version ?? 'v4'} onValueChange={(value) => {
       setVersion(value)
     }}>
@@ -25,10 +27,11 @@ export const SelectVersionComponent = ()=> {
       </SelectTrigger>
       <SelectContent>
         {uuidVersions.map((value)=> (
-        <SelectItem key={value} value={value}>{value}</SelectItem>
-        ))}
+          <SelectItem key={value} value={value}>{value}</SelectItem>
+          ))}
       </SelectContent>
     </Select>
+    </Suspense>
 
   )
 }
