@@ -106,7 +106,7 @@ export default function Home() {
       <header className="bg-slate-900 p-4 flex flex-col items-center">
         <h1 className="text-white text-center">UUID GENERATOR</h1>
         <div className="flex flex-col justify-center">
-        <h4 className="text-white text-center inline-flex justify-center items-center">Your <SelectVersionComponent/> UUID:</h4>
+        {/* <h4 className="text-white text-center inline-flex justify-center items-center">Your <SelectVersionComponent/> UUID:</h4> */}
         <span className="inline-flex items-center font-semibold px-2 text-lg justify-center text-white text-center bg-slate-800 h-12 rounded-md">
         {generatedUuid}
         </span>
