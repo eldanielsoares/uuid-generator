@@ -82,7 +82,9 @@ export default function Home() {
   }
   
   useEffect(()=> {
-    handleCreateNewUUID()
+    if (typeof window !== "undefined") {
+      handleCreateNewUUID()
+    }
   }, [version])
   
 
