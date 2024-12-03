@@ -1,7 +1,7 @@
 'use client'
 import { SelectVersionComponent } from '@/components/SelectVersionComponent';
 import { useQueryState } from 'nuqs';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Toaster, toast } from 'sonner';
 import { Input } from '@/components/ui/input'
 
@@ -100,6 +100,9 @@ export default function Home() {
         <meta property="og:url" content="https://uuidgenerator.tech" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      
+      <Suspense fallback={<span>...</span>}>
+        
     <main className="w-full flex flex-col min-h-screen">
       <header className="bg-slate-900 p-4 flex flex-col items-center">
         <h1 className="text-white text-center">UUID GENERATOR</h1>
@@ -143,6 +146,7 @@ export default function Home() {
         <span className="px-6">{uuidDescriptions[version ?? 'v4']}</span>
       </div>
     </main>
+          </Suspense>
     <Toaster/>
     <Footer/>
     </>
