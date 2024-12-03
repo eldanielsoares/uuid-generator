@@ -16,7 +16,7 @@ const generators: Record<string, any> = {
   'v6': v6, 
   'v7': v7,
   'NIL': NIL
-}
+} 
 
 const uuidDescriptions: Record<string, string> = {
   v1: "Generates a time-based UUID using the current timestamp and MAC address, making it ideal for ordered identifiers or time-sensitive applications.",
@@ -49,7 +49,7 @@ export default function Home() {
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(generatedUuid);
-      toast('UUID successfully copied')
+      toast('UUID successfully copied.')
     } catch (err) {
       console.error('Fail to copy: ', err);
     }
