@@ -27,65 +27,65 @@ const uuidDescriptions: Record<string, string> = {
 };
 
 export default function Home() {
-  const [version, _] = useQueryState('version')
-  const [generatedUuid, setGeneratedUuid] = useState('')
-  const [lenght, setLenght] = useState('')
-  const [uuidList, setUuidList] = useState<string[]>([])
+  // const [version, _] = useQueryState('version')
+  // const [generatedUuid, setGeneratedUuid] = useState('')
+  // const [lenght, setLenght] = useState('')
+  // const [uuidList, setUuidList] = useState<string[]>([])
   
   
-  const handleCreateNewUUID = ()=> {
-    if(version === 'NIL') return setGeneratedUuid(generators[version])
+  // const handleCreateNewUUID = ()=> {
+  //   if(version === 'NIL') return setGeneratedUuid(generators[version])
     
-    setGeneratedUuid(generators[version ?? 'v4']())
-  }
+  //   setGeneratedUuid(generators[version ?? 'v4']())
+  // }
   
-  const handleCreateNewUUIDToBulk =  ()=> {
-    if(version === 'NIL') return generators[version]
+  // const handleCreateNewUUIDToBulk =  ()=> {
+  //   if(version === 'NIL') return generators[version]
     
-    return generators[version ?? 'v4']()
-  }
+  //   return generators[version ?? 'v4']()
+  // }
   
   
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(generatedUuid);
-      toast('UUID successfully copied.')
-    } catch (err) {
-      console.error('Fail to copy: ', err);
-    }
-  };
+  // const copyToClipboard = async () => {
+  //   try {
+  //     await navigator.clipboard.writeText(generatedUuid);
+  //     toast('UUID successfully copied.')
+  //   } catch (err) {
+  //     console.error('Fail to copy: ', err);
+  //   }
+  // };
   
-  const handleBulkUUID = () => {
-    let uuidGeneratedList : string[]= []
-    const list = Array(Number(lenght)).fill(0)  
+  // const handleBulkUUID = () => {
+  //   let uuidGeneratedList : string[]= []
+  //   const list = Array(Number(lenght)).fill(0)  
     
     
-    for (const value of  list) {
-      uuidGeneratedList.push(handleCreateNewUUIDToBulk())
-    }
+  //   for (const value of  list) {
+  //     uuidGeneratedList.push(handleCreateNewUUIDToBulk())
+  //   }
     
-    setUuidList(uuidGeneratedList)
+  //   setUuidList(uuidGeneratedList)
  
-  }
+  // }
   
-  const downloadAsTxt = () => {
-    const csvString = uuidList.join(", ");
+  // const downloadAsTxt = () => {
+  //   const csvString = uuidList.join(", ");
   
-    const blob = new Blob([csvString], { type: "text/plain" });
+  //   const blob = new Blob([csvString], { type: "text/plain" });
   
-    const link = document.createElement("a");
-    link.href = URL.createObjectURL(blob);
-    link.download = "list.txt"; 
-    link.click();
+  //   const link = document.createElement("a");
+  //   link.href = URL.createObjectURL(blob);
+  //   link.download = "list.txt"; 
+  //   link.click();
   
-    URL.revokeObjectURL(link.href);
-  }
+  //   URL.revokeObjectURL(link.href);
+  // }
   
-  useEffect(()=> {
-    if (typeof window !== "undefined") {
-      handleCreateNewUUID()
-    }
-  }, [version])
+  // useEffect(()=> {
+  //   if (typeof window !== "undefined") {
+  //     handleCreateNewUUID()
+  //   }
+  // }, [version])
   
 
   return (
@@ -101,10 +101,9 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       
-      <Suspense fallback={<span>...</span>}>
         
     <main className="w-full flex flex-col min-h-screen">
-      <header className="bg-slate-900 p-4 flex flex-col items-center">
+      {/* <header className="bg-slate-900 p-4 flex flex-col items-center">
         <h1 className="text-white text-center">UUID GENERATOR</h1>
         <div className="flex flex-col justify-center">
         <h4 className="text-white text-center inline-flex justify-center items-center">Your <SelectVersionComponent/> UUID:</h4>
@@ -144,9 +143,8 @@ export default function Home() {
         ): null}
         <h4>What is {version?.toUpperCase() ?? 'V4'} UUID</h4>
         <span className="px-6">{uuidDescriptions[version ?? 'v4']}</span>
-      </div>
+      </div> */}
     </main>
-          </Suspense>
     <Toaster/>
     <Footer/>
     </>
