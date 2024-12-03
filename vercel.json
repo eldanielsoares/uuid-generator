@@ -1,0 +1,6 @@
+{
+  "checks": {
+    "eslint": false,
+    "prettier": false
+  }
+}

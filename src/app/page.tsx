@@ -1,14 +1,14 @@
-"use client"
-import { SelectVersionComponent } from "@/components/SelectVersionComponent";
-import { useQueryState } from "nuqs";
-import { useEffect, useState } from "react";
-import { Toaster, toast } from "sonner";
-import { Input } from "@/components/ui/input"
+'use client'
+import { SelectVersionComponent } from '@/components/SelectVersionComponent';
+import { useQueryState } from 'nuqs';
+import { useEffect, useState } from 'react';
+import { Toaster, toast } from 'sonner';
+import { Input } from '@/components/ui/input'
 
 
 import {v1, v4, v6, v7, NIL} from 'uuid'
-import Head from "next/head";
-import Footer from "@/components/Footer";
+import Head from 'next/head';
+import Footer from '@/components/Footer';
 
 const generators: Record<string, any> = {
   'v1': v1,
