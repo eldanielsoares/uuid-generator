@@ -111,8 +111,8 @@ export function HomePage() {
         {generatedUuid}
         </span>
         <div className="self-center mt-3 flex gap-2 items-center">
-        <button className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0" onClick={copyToClipboard}>Copy UUID</button>
-        <button className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0" onClick={handleCreateNewUUID}>Generate new UUID</button>
+        <button className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0 cursor-pointer" onClick={copyToClipboard}>Copy UUID</button>
+        <button className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0 cursor-pointer" onClick={handleCreateNewUUID}>Generate new UUID</button>
         </div>
         </div>
       </header>
@@ -123,14 +123,14 @@ export function HomePage() {
         <span className="inline-flex justify-center items-center gap-2">
           how many?
           <Input className="w-16 md:w-[10rem] h-8" type="number" placeholder="max 600" value={lenght} onChange={(v) => setLenght(v.target.value)}/>
-          <button disabled={Number(lenght) > 600} className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0" onClick={handleBulkUUID}>Generate UUIDs</button>
+          <button disabled={Number(lenght) > 600} className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0 cursor-pointer" onClick={handleBulkUUID}>Generate UUIDs</button>
         </span>
         
         {uuidList?.length ? (
           <>
           <div className="flex flex-col gap-4 mt-4 shadow-lg rounded-md max-w-96 p-6 pt-0 bg-slate-50">  
         
-        <button className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0 mt-3" onClick={downloadAsTxt}>
+        <button className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0 mt-3 cursor-pointer" onClick={downloadAsTxt}>
           Download list to a file
         </button>
         {uuidList.map((value)=> (
