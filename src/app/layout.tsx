@@ -32,7 +32,6 @@ export default function RootLayout({
       >
         <NuqsAdapter>
         {children}
-        <Footer/>
         </NuqsAdapter>
       </body>
     </html>

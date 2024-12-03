@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input"
 
 
 import {v1, v4, v6, v7, NIL} from 'uuid'
+import Head from "next/head";
+import Footer from "@/components/Footer";
 
 const generators: Record<string, any> = {
   'v1': v1,
@@ -29,8 +31,6 @@ export default function Home() {
   const [generatedUuid, setGeneratedUuid] = useState('')
   const [lenght, setLenght] = useState('')
   const [uuidList, setUuidList] = useState<string[]>([])
-  
-  console.log(uuidList);
   
   
   const handleCreateNewUUID = ()=> {
@@ -85,9 +85,20 @@ export default function Home() {
     handleCreateNewUUID()
   }, [version])
   
+
   return (
     <>
-    <main className="w-full h-screen flex flex-col">
+      <Head>
+        <title>UUID Generator | Generate Unique UUIDs Online</title>
+        <meta name="description" content="Quickly generate secure UUIDs online, including versions v1, v4, v6, and v7. Perfect for developers and system integrators." />
+        <meta name="keywords" content="UUID generator, UUID v1, UUID v4, UUID v6, UUID v7, unique identifier, online UUID generator" />
+        <meta name="author" content="UUID Generator Team" />
+        <meta property="og:title" content="UUID Generator | Generate Unique UUIDs Online" />
+        <meta property="og:description" content="Generate UUIDs for free using our online UUID Generator. Choose from various versions tailored for your needs." />
+        <meta property="og:url" content="https://uuidgenerator.tech" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+    <main className="w-full flex flex-col min-h-screen">
       <header className="bg-slate-900 p-4 flex flex-col items-center">
         <h1 className="text-white text-center">UUID GENERATOR</h1>
         <div className="flex flex-col justify-center">
@@ -111,24 +122,27 @@ export default function Home() {
           <button disabled={Number(lenght) > 600} className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0" onClick={handleBulkUUID}>Generate UUIDs</button>
         </span>
         
-        <div className="flex flex-col gap-4 mt-4 shadow-lg rounded-md max-w-96 p-6 pt-0 bg-slate-50">  
         {uuidList?.length ? (
+          <>
+          <div className="flex flex-col gap-4 mt-4 shadow-lg rounded-md max-w-96 p-6 pt-0 bg-slate-50">  
+        
         <button className="h-8 rounded font-bold text-white px-4 bg-sky-950 border-0 mt-3" onClick={downloadAsTxt}>
           Download list to a file
         </button>
-        ): null}
         {uuidList.map((value)=> (
           <span key={value}>
               {value}
             </span>
           ))}
         </div>
-        
+          </>
+        ): null}
         <h4>What is {version?.toUpperCase() ?? 'V4'} UUID</h4>
         <span className="px-6">{uuidDescriptions[version ?? 'v4']}</span>
       </div>
     </main>
     <Toaster/>
+    <Footer/>
     </>
   );
 }
